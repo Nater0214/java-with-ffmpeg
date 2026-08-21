@@ -1,3 +1,4 @@
+# Base container image
 ARG JAVA_VERSION=21
 FROM eclipse-temurin:${JAVA_VERSION}-jre-alpine
 
@@ -17,11 +18,10 @@ RUN apk add --no-cache \
 
 # Create the Pterodactyl container user
 RUN adduser -D -h /home/container -s /bin/bash -u 988 container
-
 USER container
 ENV USER=container HOME=/home/container
 WORKDIR /home/container
 
+# Entrypoint
 COPY ./entrypoint.sh /entrypoint.sh
-
 CMD ["/bin/bash", "/entrypoint.sh"]
