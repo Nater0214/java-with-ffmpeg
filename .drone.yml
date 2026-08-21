@@ -7,7 +7,7 @@ steps:
     image: plugins/docker
     settings:
       registry: zot.nater0214.com
-      repo: zot.nater0214.com/nater0214/java-with-ffmpeg
+      repo: nater0214/java-with-ffmpeg
       tags:
         - "17"
       build_args:
@@ -35,7 +35,7 @@ steps:
     image: plugins/docker
     settings:
       registry: zot.nater0214.com
-      repo: zot.nater0214.com/nater0214/java-with-ffmpeg
+      repo: nater0214/java-with-ffmpeg
       tags:
         - "21"
         - "latest"
@@ -64,7 +64,7 @@ steps:
     image: plugins/docker
     settings:
       registry: zot.nater0214.com
-      repo: zot.nater0214.com/nater0214/java-with-ffmpeg
+      repo: nater0214/java-with-ffmpeg
       tags:
         - "25"
       build_args:
