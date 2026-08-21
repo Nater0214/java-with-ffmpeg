@@ -1,0 +1,32 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: build-and-push
+    image: plugins/docker
+    settings:
+      registry: zot.nater0214.com
+      repo: Nater0214/java-with-ffmpeg
+      tags:
+        - "${JAVA_VERSION}"
+      build_args:
+        - JAVA_VERSION=${JAVA_VERSION}
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      pull_image: true
+      no_cache: true
+
+trigger:
+  event:
+    - push
+    - cron
+    - custom
+
+matrix:
+  JAVA_VERSION:
+    - "17"
+    - "21"
+    - "25"
