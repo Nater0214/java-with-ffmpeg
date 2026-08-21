@@ -17,7 +17,7 @@ RUN apt update && apt install -y \
     bash
 
 # Create the Pterodactyl container user
-RUN adduser -D -h /home/container -s /bin/bash -u 988 container
+RUN useradd -m -s /bin/bash container
 USER container
 ENV USER=container HOME=/home/container
 WORKDIR /home/container
