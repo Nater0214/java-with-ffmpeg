@@ -38,7 +38,6 @@ steps:
       repo: zot.nater0214.com/ptero-yolks/java-with-ffmpeg
       tags:
         - "21"
-        - "latest"
       build_args:
         - JAVA_VERSION=21
       username:
