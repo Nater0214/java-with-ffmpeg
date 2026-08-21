@@ -1,16 +1,16 @@
 # Base container image
 ARG JAVA_VERSION=21
-FROM eclipse-temurin:${JAVA_VERSION}-jre-alpine
+FROM eclipse-temurin:${JAVA_VERSION}-jre-resolute
 
 # Install stuff
-RUN apk add --no-cache \
+RUN apt update && apt install -y \
     ffmpeg \
     curl \
     ca-certificates \
     openssl \
     git \
     tar \
-    sqlite \
+    sqlite3 \
     fontconfig \
     tzdata \
     iproute2 \
